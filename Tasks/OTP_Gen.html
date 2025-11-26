@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP - Generator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(237, 232, 224);
+            margin: 10rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;    
+            justify-content: center ;
+        }
+        #display{
+            font-size: 20px;
+            color: darkslategray;  
+        }
+        #otp-btn{
+
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 15px;
+        
+        }
+    </style>
+</head>
+<body>
+    <button id="otp-btn">OTP - Generation</button>
+    <p id="display"></p>
+
+    <script>
+        btn = document.getElementById("otp-btn")
+        
+        btn.addEventListener("click",()=>{ 
+            let otp = ""
+        for(i=1;i<=4;i++) {
+            let otpgen = Math.floor(Math.random()*10)
+            otp += otpgen
+        }
+        console.log(otp)
+        document.getElementById("display").innerText = "Your OTP is: " + otp;   
+        })
+        
+    </script>
+</body>
+</html>
